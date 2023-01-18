@@ -99,6 +99,13 @@ CREATE TABLE ImageEnchere (
   idEnchere      int4 NOT NULL, 
   PRIMARY KEY (idImageEnchere)
 );
+CREATE TABLE Token(
+  idToken SERIAL NOT NULL,
+  idUtilisateur int4,
+  tokenValues varchar(255),
+  dateExpiration timestamp
+);
+ALTER TABLE Token ADD FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur);
 
 ALTER TABLE Utilisateur ADD FOREIGN KEY (idGenre) REFERENCES Genre (idGenre);
 ALTER TABLE Compte ADD FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur (idUtilisateur);
