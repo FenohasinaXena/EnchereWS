@@ -75,4 +75,3 @@ CREATE OR REPLACE VIEW DetailEnchere AS(
         ImageEnchere.format
     FROM ImageEnchere JOIN V_Enchere ON V_Enchere.idEnchere = ImageEnchere.idEnchere
 );
-
