@@ -116,6 +116,13 @@ CREATE TABLE Token(
 
 ALTER TABLE Token ADD FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur);
 
+CREATE TABLE Token(
+  idToken SERIAL NOT NULL,
+  idUtilisateur int4,
+  tokenValues varchar(255),
+  dateExpiration timestamp
+);
+ALTER TABLE Token ADD FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur(idUtilisateur);
 ALTER TABLE Utilisateur ADD FOREIGN KEY (idGenre) REFERENCES Genre (idGenre);
 ALTER TABLE Compte ADD FOREIGN KEY (idUtilisateur) REFERENCES Utilisateur (idUtilisateur);
 ALTER TABLE Rechargement ADD FOREIGN KEY (idCompte) REFERENCES Compte (idCompte);
