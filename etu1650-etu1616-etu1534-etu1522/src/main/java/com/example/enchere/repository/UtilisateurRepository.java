@@ -7,7 +7,7 @@ import com.example.enchere.modele.Utilisateur;
 
 public interface UtilisateurRepository extends JpaRepository<Utilisateur, Integer> {
     
-    @Query(value = "SELECT user FROM Utilisateur user WHERE user.logins = ?1 AND user.motDePasse = ?2", nativeQuery = true)
-    public Utilisateur logins(String logins, String motDePasse);
+    @Query(value = "SELECT * FROM Utilisateur u WHERE u.email = ?1 AND u.motDePasse = ?2", nativeQuery = true)
+    public Utilisateur login(String email, String motDePasse);
 
 }
